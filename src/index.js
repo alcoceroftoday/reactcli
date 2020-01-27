@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Panel from './components/Panel';
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
@@ -13,7 +14,7 @@ const root=document.getElementById("root");
 
 
 
-ReactDOM.render(<App />,root)
+ReactDOM.render(<Panel />,root)
 
 
 serviceWorker.unregister();
