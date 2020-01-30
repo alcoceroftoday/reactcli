@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+function Clock(){
+    return (
+        <div>
+            {/* {dat.dat.toLocaleTimeString()} */}
+            <div ><h3 id="asds"></h3></div>
+        </div>
+    )
+}
 function tick() {
-    const time= <h2>{new Date().toLocaleTimeString()}</h2>;
+    const time= new Date().toLocaleTimeString();
+
     ReactDOM.render(time, document.getElementById('asds'));
 }
 
 const Timelive = () => (
-        <div>
-        <div id="asds"></div>
-        </div>
+        // Clock()
+        <Clock />
 )
 
 setInterval(tick, 1000);
