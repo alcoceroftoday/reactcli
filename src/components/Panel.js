@@ -24,6 +24,15 @@ function TimeLives(){
 /* <TimeLive /> */
     
 }
+function Content(user) {
+    return (
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{user.user.title}<i class="material-icons right">Más + </i></span>
+        {createLink(user.user)}
+        <Timelive />
+    </div>
+    );
+}
 
 const Panel = () => (
 <>
@@ -32,15 +41,11 @@ const Panel = () => (
         <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src={user.imgUrl}/>
         </div>
-        <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{user.title}<i class="material-icons right">Más + </i></span>
-            {createLink(user)}
-            <Timelive />
-        </div>
-   
+        <Content user={user} />
+ 
         <div id="contenedorTime" class="card-reveal">
-    <span class="card-title grey-text text-darken-4">{FullName(user)}<i class="material-icons right">close</i></span>
-            <p>{user.descripcion}</p>
+            <span class="card-title grey-text text-darken-4">{FullName(user)}<i class="material-icons right">close</i></span>
+                    <p>{user.descripcion}</p>
         </div>
     </div>
     </div>     
