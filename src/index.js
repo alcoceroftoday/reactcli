@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import Panel from './components/Panel';
+import Timelive from "./components/access/Timelive"
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
@@ -15,6 +16,7 @@ const root=document.getElementById("root");
 
 
 ReactDOM.render(<Panel />,root)
+
 
 
 serviceWorker.unregister();
