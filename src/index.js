@@ -5,6 +5,7 @@ import './index.css';
 import Panel from './components/Panel';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Formulario from './components/Formulario';
 // import Timelive from "./components/access/Timelive"
 import * as serviceWorker from './serviceWorker';
 
@@ -15,11 +16,13 @@ import * as serviceWorker from './serviceWorker';
 const navbar=document.getElementById("navbar");
 const root=document.getElementById("root");
 const footer=document.getElementById("footer");
+const formulario=document.getElementById("formulario");
 // // ReactDOM.render(element,root);
 
 ReactDOM.render(<Navbar />,navbar)
 ReactDOM.render(<Panel />,root)
 ReactDOM.render(<Footer />,footer)
+ReactDOM.render(<Formulario />,formulario)
 
 
 
