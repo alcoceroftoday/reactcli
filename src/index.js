@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import Panel from './components/Panel';
+// import Panel from './components/Panel';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Formulario from './components/Formulario';
+import Prueba from './components/Prueba.jsx';
+// import Formulario from './components/Formulario';
 // import Timelive from "./components/access/Timelive"
 import * as serviceWorker from './serviceWorker';
 
@@ -20,9 +21,11 @@ const formulario=document.getElementById("formulario");
 // // ReactDOM.render(element,root);
 
 ReactDOM.render(<Navbar />,navbar)
-ReactDOM.render(<Panel />,root)
+// ReactDOM.render(<Panel />,root)
+// ReactDOM.render(<Footer />,footer)
+ReactDOM.render(<Prueba title="esto es un titlo" price={20}/>,root)
 ReactDOM.render(<Footer />,footer)
-ReactDOM.render(<Formulario />,formulario)
+// ReactDOM.render(<Formulario />,formulario)
 
 
 
