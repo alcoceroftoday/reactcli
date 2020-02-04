@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 // import Panel from './components/Panel';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// import Navbar from './components/Navbar';
+// import Footer from './components/Footer';
 // import Principal from './Consumirapi/Principal.jsx';
 // import RouterS from './Consumirapi/RouterS.jsx';
 
@@ -20,16 +20,18 @@ import * as serviceWorker from './serviceWorker';
 // // const element=React.createElement("h1",{className:"saludo"},"H3ola mundo");
 // const navbar=document.getElementById("navbar");
 const root=document.getElementById("root");
-const footer=document.getElementById("footer");
+// const barramenu=document.getElementById("BarraLateral");
+// const footer=document.getElementById("footer");
 // const formulario=document.getElementById("formulario");
 // // ReactDOM.render(element,root);
 
 // ReactDOM.render(<Navbar />,navbar)
 // ReactDOM.render(<Panel />,root)
 // ReactDOM.render(<Footer />,footer)
+// ReactDOM.render(<BarraLateral />,barramenu)
 ReactDOM.render(<App />,root)
 // ReactDOM.render(<Prueba title="esto es un titlo" price={20}/>,root)
-ReactDOM.render(<Footer />,footer)
+
 // ReactDOM.render(<Formulario />,formulario)
 
 
