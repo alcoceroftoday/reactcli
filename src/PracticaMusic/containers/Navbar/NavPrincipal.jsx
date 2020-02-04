@@ -1,5 +1,6 @@
 import React from 'react';
 import NavLateral from "./NavLateral";
+import MainContent from "../Commons/MainContent";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,8 +9,12 @@ import {
   useParams
 } from "react-router-dom";
 import "../../../styles/MusicMain.scss"
-const NavPrincipal = () =>(
-  <l1>principal</l1>
+const NavPrincipal = (props) =>(
+  <div>
+    <div>COSAS</div>
+    <div>{props.title}</div>
+    <MainContent />
+  </div>
 )
 
 export default NavPrincipal;

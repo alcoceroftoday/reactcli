@@ -37,22 +37,26 @@ export default function Layout() {
 }
 
 function Browser() {
+  let Name = "Browser";
   return (
-    <NavPrincipal />
+    <NavPrincipal title={Name} />
   );
 }
 function Artist() {
+  let Name = "Artist";
   return (
-    <NavPrincipal />
+    <NavPrincipal title={Name} />
   );
 }
 function Albums() {
+  let Name = "Albums";
   return (
-    <NavPrincipal />
+    <NavPrincipal title={Name} />
   );
 }function Songs() {
+  let Name = "Songs";
   return (
-    <NavPrincipal />
+    <NavPrincipal title={Name} />
   );
 }
 
