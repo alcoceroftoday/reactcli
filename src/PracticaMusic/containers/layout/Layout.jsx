@@ -27,6 +27,12 @@ export default function Layout() {
             <Route path="/songs">
                 <Songs />
             </Route>
+            <Route path="/songs&&:id">
+                <SongsPers />
+            </Route>
+            <Route path="/albums&&:id">
+                <AlbumsPers />
+            </Route>
             {/* <Route path="/fornite&&:id">
                 <Showimage />
             </Route> */}
@@ -53,21 +59,25 @@ function Albums() {
   return (
     <NavPrincipal title={Name} />
   );
-}function Songs() {
+}
+function Songs() {
   let Name = "Tracks";
   return (
     <NavPrincipal title={Name} />
   );
 }
-
-// function Showimage() {
-//   let { id } = useParams();
-//   // let url2= id.json();
-//   return (
-//     <div>
-//      {id}
-
-//      </div>
-//     // <Setimage url={id}/>
-//   );
-// }
+function SongsPers() {
+  let { id } = useParams();
+  let Name = "Artists";
+  return (
+    <NavPrincipal title={Name} id={id} />
+  );
+}
+function AlbumsPers() {
+  let { id } = useParams();
+  let Name = "Albums";
+  console.log(id,"sds");
+  return (
+    <NavPrincipal title={Name} id={id}/>
+  );
+}
