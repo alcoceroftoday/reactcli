@@ -13,7 +13,7 @@ const NavPrincipal = (props) =>(
   <div>
     <div>COSAS</div>
     <div>{props.title}</div>
-    <MainContent />
+    <MainContent type={props.title} />
   </div>
 )
 

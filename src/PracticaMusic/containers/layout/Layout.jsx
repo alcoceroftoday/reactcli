@@ -37,13 +37,13 @@ export default function Layout() {
 }
 
 function Browser() {
-  let Name = "Browser";
+  let Name = "Tracks";
   return (
     <NavPrincipal title={Name} />
   );
 }
 function Artist() {
-  let Name = "Artist";
+  let Name = "Artists";
   return (
     <NavPrincipal title={Name} />
   );
@@ -54,7 +54,7 @@ function Albums() {
     <NavPrincipal title={Name} />
   );
 }function Songs() {
-  let Name = "Songs";
+  let Name = "Tracks";
   return (
     <NavPrincipal title={Name} />
   );

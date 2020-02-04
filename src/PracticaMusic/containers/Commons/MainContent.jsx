@@ -1,37 +1,67 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Content from "./Content";
-import Setimage from "../../api/Service.jsx";
 
-const MainContent = () =>(
-    <div>
-        <Setimage />
-        {/* { this.state.done ? (
-                // {this.state.done && this.state.items.isArray() ? (
-                    // // this.state.items[0].item.name
-                    //  JSON.stringify(this.state.items[0])
-                    // "asda"
-                    // console.log(this.state.items[0])
-                <List items={this.state.items} />
-                ) : (
-                    <Carga />
-                )} */}
-        <Content />
-        <Content />
-        <Content />
-    </div>  
-)
+class MainContent extends Component {
+    constructor() {
+        super();
+        this.state = { 
+            done: false,
+            items: []
+        };
+        
+    }
+    componentDidMount() {
+        let typeShare=this.props.type.toLowerCase();
+        fetch('http://ec2-35-174-153-145.compute-1.amazonaws.com/api/'+typeShare)
+        .then(result=>result.json())
+        .then( //result => console.log(result)
+        result=>this.setState({
+            done: true,
+            items:result
+        })
+        )
+    }
+    render() {
+        return(
+            <div>
+             <GetResult items={this.state.items} type={this.props.type.toLowerCase()} />
+            </div>
+        )
+    }
+}
+function VerifyTypeShare(type,item){
+
+        if(type=="tracks"){
+            return (
+                <Content type={type} nombre={item.name} duration={item.duration} /> 
+            );
+        }else if(type=="tracks"){
+            return (
+                <Content type={type} nombre={item.name} /> 
+                ); 
+        }else if(type=="artists"){
+            return (
+                <Content type={type} nombre={item.name} urlImage={item.artwork} /> 
+                );
+        }else if(type=="albums"){
+            return (
+                <Content type={type} nombre={item.name} urlImage={item.artwork} /> 
+                );
+        }
+    
+}
 const GetResult = (props) => (
-    <ul>
-        {/* {console.log(props.imaaaaads)} */}
+       <div> 
         {
             props.items.map((item, i) => {
                 return (
                     <>
-                        { item.album_id ? <img className="activator" src={item.album_id}/> : "" } 
+                    {VerifyTypeShare(props.type,item)}
                     </>
                 )
             })
         }
-    </ul>
+        </div>
 );
+
 export default MainContent;
