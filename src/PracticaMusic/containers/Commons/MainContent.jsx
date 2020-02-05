@@ -10,26 +10,57 @@ class MainContent extends Component {
         };
         
     }
-    TypeSharePer(){
-        console.log(2);
+
+    consultaApi() {
+        console.log("si pasa por aca")
+        this.setState({
+            done:true,
+            items:[1,2]
+        })
     }
+
     componentDidMount() {
         let typeShare=this.props.type.toLowerCase();
         let idconsulta=this.props.id;
-        console.log(idconsulta);
-        let consulta='http://ec2-35-174-153-145.compute-1.amazonaws.com/api/'+typeShare;
-        if(idconsulta){
-            consulta='http://ec2-35-174-153-145.compute-1.amazonaws.com/api/'+typeShare+'/'+idconsulta;
+        let respuesta=[];
+        console.log(this.state.items,"sdsd");
+        
+        if(!idconsulta){
+                let consulta='http://ec2-35-174-153-145.compute-1.amazonaws.com/api/'+typeShare;
+                fetch(consulta)
+            .then(result=>result.json())
+            .then( //result => console.log(result)
+            result=>this.setState({
+                done: true,
+                items:result
+            })
+            )
+        }else{
+            let consulta='http://ec2-35-174-153-145.compute-1.amazonaws.com/api/'+typeShare+'/'+idconsulta;
+            fetch(consulta)
+            .then(result=>result.json())
+            .then( //result => console.log(result)
+            result=>this.setState({
+                done: true,
+                items:result.albums
+            })
+            // // result => respuesta=result
+            )
         }
-        fetch(consulta)
-        .then(result=>result.json())
-        .then( result => console.log(result)
+        // fetch(consulta)
+        // .then(result=>result.json())
+        // .then( //result => console.log(result)
         // result=>this.setState({
         //     done: true,
-        //     items:result
+        //     items:result.albums
         // })
-        )
+        // // // result => respuesta=result
+        // )
+        // console.log(respuesta)
+        
     }
+   
+    
     render() {
         return(
             <div>

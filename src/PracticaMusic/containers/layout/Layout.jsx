@@ -27,15 +27,12 @@ export default function Layout() {
             <Route path="/songs">
                 <Songs />
             </Route>
-            <Route path="/songs&&:id">
-                <SongsPers />
-            </Route>
             <Route path="/albums&&:id">
                 <AlbumsPers />
             </Route>
-            {/* <Route path="/fornite&&:id">
-                <Showimage />
-            </Route> */}
+            <Route path="/artist&&:id">
+                <ArtistPers />
+            </Route>
         </Switch>
     </div>
 </Router>  
@@ -66,16 +63,16 @@ function Songs() {
     <NavPrincipal title={Name} />
   );
 }
-function SongsPers() {
+function AlbumsPers() {
   let { id } = useParams();
   let Name = "Artists";
   return (
     <NavPrincipal title={Name} id={id} />
   );
 }
-function AlbumsPers() {
+function ArtistPers() {
   let { id } = useParams();
-  let Name = "Albums";
+  let Name = "Artists";
   console.log(id,"sds");
   return (
     <NavPrincipal title={Name} id={id}/>
