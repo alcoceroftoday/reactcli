@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import NavPrincipal from '../Navbar/NavPrincipal';
+import NavBrowser from './Browser';
+import NavSongs from './Songs/Songs';
+import NavAlbums from './Albums/Albums';
+import NavAlbumsPers from './Albums/AlbumsPers';
+import NavArtists from './Artists/Artists';
+import NavArtistsPers from './Artists/ArtistsPers';
 import NavLateral from "../Navbar/NavLateral";
-import MainContent from "../../components/Commons/MainContent";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   useParams
 } from "react-router-dom";
 interface RouteParams {
   id: string
 }
-
 export default function Layout() {
   return (
     <Router>
@@ -23,16 +25,16 @@ export default function Layout() {
                 <Browser />
             </Route>
             <Route path="/artists">
-                <Artist />
+                <Artists />
             </Route>
             <Route path="/artists&&:id">
-                <ArtistPers />
+                <Artists />
             </Route>
             <Route path="/albums">
                 <Albums />
             </Route>
             <Route path="/albums&&:id">
-                <AlbumsPers />
+                <Albums />
             </Route>
             <Route path="/songs">
                 <Songs />
@@ -44,40 +46,34 @@ export default function Layout() {
 }
 
 function Browser() {
-  let Name:string = "Tracks";
   return (
-    <NavPrincipal title={Name} />
-  );
-}
-function Artist() {
-  let Name:string = "Artists";
-  return (
-    <MainContent type={"s"} id={"aaa"} />
-  );
-}
-function Albums() {
-  let Name:string = "Albums";
-  return (
-    <NavPrincipal title={Name} />
+    <NavBrowser />
   );
 }
 function Songs() {
-  let Name:string = "Tracks";
   return (
-    <NavPrincipal title={Name} />
+    <NavSongs />
   );
 }
-function AlbumsPers() {
+function Albums() {
   let { id } = useParams<RouteParams>();
-  let Name:string = "Albums";
+  if (id) {
   return (
-    <NavPrincipal title={Name} id={id} />
+    <NavAlbumsPers id={id} />
+  );
+  }
+  return (
+    <NavAlbums />
   );
 }
-function ArtistPers() {
+function Artists() {
   let { id } = useParams<RouteParams>();
-  let Name:string = "Artists";
+  if (id) {
+    return (
+      <NavArtistsPers id={id}/>
+    );
+  }
   return (
-    <NavPrincipal title={Name} id={id}/>
+    <NavArtists />
   );
 }

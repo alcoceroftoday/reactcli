@@ -23,11 +23,9 @@ class MainContent extends Component<IState> {
         
     }
 
-
- 
     componentDidMount(){
         let a = new Service;
-        const [type, resPromise] = a.GetData(this.props.type,this.props.id);
+        const [type, resPromise] = a.GetData("Albums","1");
         resPromise.then((data: any) => {
             this.setState({...this.state, items: data, done: true});
         })
@@ -39,11 +37,11 @@ class MainContent extends Component<IState> {
         
 
 
-        console.log()
+        console.log(a.GetData("Albums","1"));
         return(
             <div>
-                ass
-                {this.props.type}
+                
+                {this.state.items}
                 {this.props.id ? "-"+this.props.id : ""}
                 {/* {this.state.items} */}
                 {/* {2>1?<GetResult items={this.state.items} type={this.props.type.toLowerCase()} />:<GetResult items={this.state.items} type={this.props.type.toLowerCase()} />} */}
