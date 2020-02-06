@@ -7,26 +7,31 @@ import {
     useParams
   } from "react-router-dom";
   import "../../../styles/MusicMain.scss"
-let Links:string[]=["Browser","Artists","Albums","Songs"];
+let Linksa:string[]=["Browser","Artists","Albums","Songs"];
 const NavLateral = () =>(
-<div id="contentLateral">
+    <div id="contentLateral">
         <div className="col s12">
             <div className="collection">
-                {
-                    <GeneraLink NameLink="Browser"/>
-                }
-                {/* <Link className="collection-item" to="/browser" >Browser</Link>
-                <Link className="collection-item" to="/artist">Artists</Link>
-                <Link className="collection-item" to="/albums">Albums</Link>
-                <Link className="collection-item" to="/songs">Songs</Link> */}
+   
+                
+                    <AllLink Links={Linksa} />
+                
             </div>
         </div>
 </div>     
 )
-const GeneraLink=(props:{NameLink:string})=>{
 
-    return (<Link className="collection-item" to="/browser" >{props.NameLink}</Link>);
-}
-     
+interface NvConstructor {
+    Links: string[]
+  }
+  
+const AllLink =(props:{Links:string[]}) =>{
+
+    return (<>
+    {props.Links.map(value => {
+        return <Link className="collection-item" to={`/${value}`} >{value}</Link>
+    })}
+    </>)
+}  
 
 export default NavLateral;
