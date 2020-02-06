@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavPrincipal from '../Navbar/NavPrincipal';
 import NavLateral from "../Navbar/NavLateral";
+import MainContent from "../../components/Commons/MainContent";
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,10 +22,10 @@ export default function Layout() {
             <Route path="/browser">
                 <Browser />
             </Route>
-            <Route path="/artist">
+            <Route path="/artists">
                 <Artist />
             </Route>
-            <Route path="/artist&&:id">
+            <Route path="/artists&&:id">
                 <ArtistPers />
             </Route>
             <Route path="/albums">
@@ -51,7 +52,7 @@ function Browser() {
 function Artist() {
   let Name:string = "Artists";
   return (
-    <NavPrincipal title={Name} />
+    <MainContent type={"s"} id={"aaa"} />
   );
 }
 function Albums() {

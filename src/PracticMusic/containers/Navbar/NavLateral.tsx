@@ -12,15 +12,11 @@ const NavLateral = () =>(
     <div id="contentLateral">
         <div className="col s12">
             <div className="collection">
-   
-                
                     <AllLink Links={Linksa} />
-                
             </div>
         </div>
 </div>     
 )
-
 interface NvConstructor {
     Links: string[]
   }
@@ -29,7 +25,7 @@ const AllLink =(props:{Links:string[]}) =>{
 
     return (<>
     {props.Links.map(value => {
-        return <Link className="collection-item" to={`/${value}`} >{value}</Link>
+        return <Link className="collection-item" to={`/${value.toLowerCase()}`} >{value}</Link>
     })}
     </>)
 }  

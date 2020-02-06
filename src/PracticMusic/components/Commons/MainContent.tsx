@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Service from "../../api/Service";
 // import Content from "./Content";
 interface IState{
     type:string,
@@ -7,18 +8,41 @@ interface IState{
 interface NState{
     items:string[]
 }
+// function crear(dato2:string):string{
+//     let dato2:string= Service;
+//     console.log(dato2.getUser())
+//     return dato2;
+// }
 class MainContent extends Component<IState> {
     constructor(props: IState) {
             super(props);
             this.state = { 
             done: false,
-            items: [1,2]
+            items: []
         };
         
-    }  
+    }
+
+
+ 
+    componentDidMount(){
+        let a = new Service;
+        const [type, resPromise] = a.GetData(this.props.type,this.props.id);
+        resPromise.then((data: any) => {
+            this.setState({...this.state, items: data, done: true});
+        })
+    }
+    
     render() {
+       
+        
+        
+
+
+        console.log()
         return(
             <div>
+                ass
                 {this.props.type}
                 {this.props.id ? "-"+this.props.id : ""}
                 {/* {this.state.items} */}

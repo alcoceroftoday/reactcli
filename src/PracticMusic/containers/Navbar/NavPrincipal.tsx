@@ -1,5 +1,4 @@
 import React from 'react';
-import NavLateral from "./NavLateral";
 import MainContent from "../../components/Commons/MainContent";
 import {
   BrowserRouter as Router,
