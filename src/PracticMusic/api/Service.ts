@@ -1,6 +1,7 @@
 export default class Service {
 
-  public GetData(type:string,id?:string):[string,any] {
+  // public GetData(type:string,id?:string):[string,any] {
+    public GetData(type:string,id?:string):[any] {
     let url:string='http://ec2-35-174-153-145.compute-1.amazonaws.com/api/';
     let consulta:string= id ? url+type.toLocaleLowerCase()+'/'+id : url+type.toLocaleLowerCase();
     // let resp:Object="";
@@ -15,7 +16,7 @@ export default class Service {
       // // })
       // // )
       // .then(data=>{return data})
-      return [type,resp];
+      return [resp];
   }
 }
 

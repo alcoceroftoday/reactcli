@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component,useState,useEffect } from 'react';
 import Service from "../../api/Service";
+import { any } from 'prop-types';
 // import Content from "./Content";
 interface IState{
     type:string,
@@ -25,23 +26,21 @@ class MainContent extends Component<IState> {
 
     componentDidMount(){
         let a = new Service;
-        const [type, resPromise] = a.GetData("Albums","1");
+        const [resPromise] = a.GetData("Albums","1");
+        console.log(a.GetData("Albums",""),"aaaa");
         resPromise.then((data: any) => {
-            this.setState({...this.state, items: data, done: true});
+            this.setState({done: true,items: data });
         })
     }
     
+    
+
     render() {
-       
         
-        
-
-
-        console.log(a.GetData("Albums","1"));
-        return(
+   return(
             <div>
                 
-                {this.state.items}
+                {/* {this.state.items} */}
                 {this.props.id ? "-"+this.props.id : ""}
                 {/* {this.state.items} */}
                 {/* {2>1?<GetResult items={this.state.items} type={this.props.type.toLowerCase()} />:<GetResult items={this.state.items} type={this.props.type.toLowerCase()} />} */}
@@ -50,6 +49,7 @@ class MainContent extends Component<IState> {
         )
     }
 }
+
 // function VerifyTypeShare(type,item){
 
 //         if(type=="tracks"){
