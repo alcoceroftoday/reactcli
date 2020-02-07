@@ -1,14 +1,8 @@
 import React,{Component} from "react";
 import axios from "axios";
 import DataContext from "../Context/DataContext";
-class User extends Component{
-    constructor(props){
-        super(props)
+const User=()=>(
 
-        this.state={
-            users:[]
-        }
-    }
 
     // componentDidMount(){
     //     axios.get('https://jsonplaceholder.typicode.com/users')
@@ -20,13 +14,11 @@ class User extends Component{
     //         )
     // }
 
-    render(){
+  
 
-        return(
+
            <DataContext.Consumer>
                {context=><div>{context.courses[0].id}--**</div>}
            </DataContext.Consumer>
-        );
-    }
-}
+);
 export default User;
