@@ -1,6 +1,7 @@
 import React, { Component,useState,useEffect } from 'react';
 import Service from "../../api/Service";
 import { any } from 'prop-types';
+import User from "../Page/User.jsx"
 // import Content from "./Content";
 interface IState{
     type:string,
@@ -38,8 +39,9 @@ class MainContent extends Component<IState> {
     render() {
         
    return(
-            <div>
-                
+            <div> 
+                <User />
+
                 {/* {this.state.items} */}
                 {this.props.id ? "-"+this.props.id : ""}
                 {/* {this.state.items} */}

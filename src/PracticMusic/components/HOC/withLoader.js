@@ -3,7 +3,7 @@ import React, { Component } from "react"
 const withLoader = (WrappedComponent)=>{
     return class withLoader extends Component{
         constructor(props){
-            super(porps)
+            super(props)
         }
         render(){
             return <WrappedComponent {...this.props} />
