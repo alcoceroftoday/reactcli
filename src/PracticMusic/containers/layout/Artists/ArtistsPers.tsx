@@ -10,7 +10,7 @@ import {
 import "../../../../styles/MusicMain.scss"
 const NavArtistsPers = (props:{id:string}) => (
   <div>
-    <div>Artsper</div>
+    <div>Artsper{props.id}</div>
     <MainContent type={"sds"} id={"sdsd"} />
   </div>
 )

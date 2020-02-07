@@ -21,38 +21,15 @@ export default function Layout() {
       <NavLateral />
     <div id="contentPrincipal">
         <Switch>
-            <Route path="/browser">
-                <Browser />
-            </Route>
-            <Route path="/artists">
-                <Artists />
-            </Route>
-            <Route path="/artists&&:id">
-                <Artists />
-            </Route>
-            <Route path="/albums">
-                <Albums />
-            </Route>
-            <Route path="/albums&&:id">
-                <Albums />
-            </Route>
-            <Route path="/songs">
-                <Songs />
-            </Route>
+            <Route path="/browser" exact component={()=>(<NavBrowser />)}/>
+            <Route path="/artists" exact component={Artists}/>
+            <Route path="/artists/:id" exact component={Artists}/>
+            <Route path="/albums" exact component={Albums}/>
+            <Route path="/albums/:id" exact component={Albums}/>
+            <Route path="/songs" exact component={()=><NavSongs />}/>
         </Switch>
     </div>
 </Router>  
-  );
-}
-
-function Browser() {
-  return (
-    <NavBrowser />
-  );
-}
-function Songs() {
-  return (
-    <NavSongs />
   );
 }
 function Albums() {

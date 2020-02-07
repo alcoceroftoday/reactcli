@@ -10,7 +10,7 @@ import {
 import "../../../../styles/MusicMain.scss"
 const NavAlbumsPers = (props:{id:string}) => (
   <div>
-    <div>AlbumsPers</div>
+    <div>AlbumsPers{props.id}</div>
     <MainContent type={"sds"} id={"sdsd"} />
   </div>
 )

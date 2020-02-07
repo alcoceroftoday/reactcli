@@ -17,10 +17,6 @@ const NavLateral = () =>(
         </div>
 </div>     
 )
-interface NvConstructor {
-    Links: string[]
-  }
-  
 const AllLink =(props:{Links:string[]}) =>{
 
     return (<>
