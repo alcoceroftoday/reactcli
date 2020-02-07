@@ -15,6 +15,7 @@ import {
 interface RouteParams {
   id: string
 }
+// const contextt = React.createContext("HOLAAA SI LEES FUNCIONO");
 export default function Layout() {
   return (
     <Router>
@@ -26,7 +27,7 @@ export default function Layout() {
             <Route path="/artists/:id" exact component={Artists}/>
             <Route path="/albums" exact component={Albums}/>
             <Route path="/albums/:id" exact component={Albums}/>
-            <Route path="/songs" exact component={()=><NavSongs />}/>
+            <Route path="/songs" exact component={()=><NavSongs  />}/>
         </Switch>
     </div>
 </Router>  
@@ -40,7 +41,10 @@ function Albums() {
   );
   }
   return (
+    <>
     <NavAlbums />
+    {/* <contextt.Provider value={"s"}></contextt.Provider> */}
+    </>
   );
 }
 function Artists() {

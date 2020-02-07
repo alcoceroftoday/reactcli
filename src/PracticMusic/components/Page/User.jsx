@@ -31,7 +31,7 @@ class User extends Component{
         const {users} = this.state;
         return(
             <>
-            
+            {/* {JSON.stringify(this.state)} */} 
             <div>{
                 users.map(u=>(
                     <div key={u.id}>{u.name}</div>
