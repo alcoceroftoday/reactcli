@@ -5,7 +5,7 @@ constructor(props){
     super(props)
 
     this.state={
-        courses:[{"id":2,"titulo":"react title"}]
+        "courses":[{"id":4,"titulo":"react title"},{"id":2,"titulo":"react title"}]
     }
 }
     render(){
