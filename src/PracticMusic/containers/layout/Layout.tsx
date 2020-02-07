@@ -6,6 +6,7 @@ import NavAlbumsPers from './Albums/AlbumsPers';
 import NavArtists from './Artists/Artists';
 import NavArtistsPers from './Artists/ArtistsPers';
 import NavLateral from "../Navbar/NavLateral";
+import DataProvider from "../../components/Context/DataProvider";
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +19,9 @@ interface RouteParams {
 // const contextt = React.createContext("HOLAAA SI LEES FUNCIONO");
 export default function Layout() {
   return (
+    <DataProvider>
+
+
     <Router>
       <NavLateral />
     <div id="contentPrincipal">
@@ -31,6 +35,7 @@ export default function Layout() {
         </Switch>
     </div>
 </Router>  
+</DataProvider>
   );
 }
 function Albums() {

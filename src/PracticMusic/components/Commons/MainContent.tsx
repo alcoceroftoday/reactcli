@@ -46,7 +46,7 @@ class MainContent extends Component<IState> {
                 </contextt.Consumer> */}
                 {/* {this.state.items} */}
                 
-                {this.props.id ? "-"+this.props.id : ""}
+                {this.props.id ? "-//"+this.props.id : ""}
                 {/* {this.state.items} */}
                 {/* {2>1?<GetResult items={this.state.items} type={this.props.type.toLowerCase()} />:<GetResult items={this.state.items} type={this.props.type.toLowerCase()} />} */}
              

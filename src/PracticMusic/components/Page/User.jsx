@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import axios from "axios";
+import DataContext from "../Context/DataContext";
 class User extends Component{
     constructor(props){
         super(props)
@@ -8,37 +9,23 @@ class User extends Component{
             users:[]
         }
     }
+
     // componentDidMount(){
-    //     fetch("https://jsonplaceholder.typicode.com/users",{method:"get"})
-    //     .then(response=>response.json())
-    //     .then(json=>this.setState({
-    //           done: true,
-    //            users:json
-    //         }))
+    //     axios.get('https://jsonplaceholder.typicode.com/users')
+    //     .then(
+    //         json=>this.setState({
+    //                   done: true,
+    //                    users:json.data
+    //         })
+    //         )
     // }
-    componentDidMount(){
-        axios.get('https://jsonplaceholder.typicode.com/users')
-        //.then(//resp=> console.log(resp.data))
-            //response=>response.json()
-        .then( //resp=>console.log(resp)
-            json=>this.setState({
-                      done: true,
-                       users:json.data
-            })
-            )
-    }
+
     render(){
-        const {users} = this.state;
+
         return(
-            <>
-            {/* {JSON.stringify(this.state)} */} 
-            <div>{
-                users.map(u=>(
-                    <div key={u.id}>{u.name}</div>
-                    ))
-                }
-            </div>
-            </>
+           <DataContext.Consumer>
+               {context=><div>{context.courses[0].id}--**</div>}
+           </DataContext.Consumer>
         );
     }
 }
